@@ -1,0 +1,16 @@
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org">
+<body>
+<fieldset th:each="view : ${viewData}">
+    <legend th:text="${view.key}">게시판제목</legend>
+    <div th:each="post : ${view.value}" class="article">
+        <h3 th:text="${post.title}">게시글제목</h3>
+        <p>
+            <strong>글쓴이:</strong> <span th:text="${post.authorName}">김학인</span><br>
+            <strong>작성일:</strong> <span th:text="${post.date}">2023</span><br>
+            <strong>내용:</strong> <span th:text="${post.content}">안녕</span>
+        </p>
+    </div>
+</fieldset>
+</body>
+</html>
