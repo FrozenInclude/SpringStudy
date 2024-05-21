@@ -43,6 +43,7 @@ public class controller {
         return ResponseEntity.status(HttpStatus.CREATED).body(article);
     }
 
+    //test용 게시판이랑 회원 확보
     @PostMapping("/test")
     @ResponseBody
     public String makeTest() {
@@ -65,14 +66,20 @@ public class controller {
     public String viewAllArticles(Model model) {
         Map<String, ArrayList<postsEntity>> viewData = new HashMap<>();
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        boardService.getAll().forEach(board -> viewData.put(board.getTitle(), new ArrayList<postsEntity>()));
-        articleService.getAll().forEach(article ->
-                viewData.get(boardService.getTitleById(article.getBoardId()))
-                        .add(new postsEntity(article.getTitle()
-                                , memberService.getNameById(article.getAuthorId())
-                                , dateFormat.format(article.getWriteDate())
-                                , article.getContent()))
+
+        boardService.getAll().forEach(board ->
+                viewData.put(board.getTitle(), new ArrayList<postsEntity>())
         );
+
+        articleService.getAll().forEach(article -> {
+            String boardTitle = boardService.getTitleById(article.getBoardId());
+            String authorName = memberService.getNameById(article.getAuthorId());
+            String formattedDate = dateFormat.format(article.getWriteDate());
+
+            postsEntity post = new postsEntity(article.getTitle(), authorName, formattedDate, article.getContent());
+            viewData.get(boardTitle).add(post);
+        });
+
         model.addAttribute("viewData", viewData);
         return "viewposts";
     }
