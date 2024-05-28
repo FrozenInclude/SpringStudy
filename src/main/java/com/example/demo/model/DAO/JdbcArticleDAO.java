@@ -68,10 +68,10 @@ public class JdbcArticleDAO implements ArticleDAO {
             article.setId(rs.getInt("id"));
             article.setTitle(rs.getString("title"));
             article.setContent(rs.getString("content"));
-            article.setCreated_date(rs.getDate("created_date"));
+            article.setCreated_date(rs.getTimestamp("created_date"));
             article.setBoard_id(rs.getInt("board_id"));
             article.setAuthor_id(rs.getInt("author_id"));
-            article.setModified_date(rs.getDate("modified_date"));
+            article.setModified_date(rs.getTimestamp("modified_date"));
             return article;
         };
     }

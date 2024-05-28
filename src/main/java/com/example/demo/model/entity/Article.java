@@ -1,5 +1,6 @@
 package com.example.demo.model.entity;
 
+import java.sql.Timestamp;
 import java.util.Date;
 
 public class Article {
@@ -8,8 +9,8 @@ public class Article {
     private int board_id;
     private String title;
     private String content;
-    private Date created_date;
-    private Date modified_date;
+    private Timestamp created_date;
+    private Timestamp modified_date;
 
     public void setId(int id) {
         this.id = id;
@@ -35,19 +36,19 @@ public class Article {
         return this.board_id;
     }
 
-    public void setCreated_date(Date created_date) {
+    public void setCreated_date(Timestamp created_date) {
         this.created_date = created_date;
     }
 
-    public Date getCreated_date() {
+    public Timestamp getCreated_date() {
         return this.created_date;
     }
 
-    public void setModified_date(Date modified_date) {
+    public void setModified_date(Timestamp modified_date) {
         this.modified_date = modified_date;
     }
 
-    public Date getModified_date() {
+    public Timestamp getModified_date() {
         return this.modified_date;
     }
 
