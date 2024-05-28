@@ -21,7 +21,6 @@ bin/
 .idea
 *.iws
 *.iml
-*.yml
 *.ipr
 out/
 !**/src/main/**/out/
@@ -36,3 +35,4 @@ out/
 
 ### VS Code ###
 .vscode/
+*.yml
