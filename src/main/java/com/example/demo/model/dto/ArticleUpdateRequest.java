@@ -1,8 +1,6 @@
 package com.example.demo.model.dto;
 
-import java.util.Date;
-
-public record ArticleUpdateDto(
+public record ArticleUpdateRequest(
     int boardId,
     String title,
     String content

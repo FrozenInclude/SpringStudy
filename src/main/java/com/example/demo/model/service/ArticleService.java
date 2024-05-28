@@ -8,10 +8,11 @@ import com.example.demo.model.DAO.BoardDAO;
 import com.example.demo.model.DAO.MemberDAO;
 import com.example.demo.model.dto.ArticleCreateRequest;
 import com.example.demo.model.dto.ArticleGetResponse;
-import com.example.demo.model.dto.ArticleUpdateDto;
+import com.example.demo.model.dto.ArticleUpdateRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.sql.Timestamp;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
@@ -91,7 +92,7 @@ public class ArticleService {
         article.setBoard_id(request.board_id());
         article.setTitle(request.title());
         article.setContent(request.content());
-        article.setCreated_date(new Date());
+        article.setCreated_date(new Timestamp(System.currentTimeMillis()));
 
         Article saved = articleDAO.insert(article);
         Member member = memberDAO.findById(saved.getAuthor_id())
@@ -102,7 +103,7 @@ public class ArticleService {
     }
 
     @Transactional
-    public ArticleGetResponse update(int id, ArticleUpdateDto request) {
+    public ArticleGetResponse update(int id, ArticleUpdateRequest request) {
         Article article = articleDAO.findById(id)
                 .orElseThrow(IllegalArgumentException::new);
         ;

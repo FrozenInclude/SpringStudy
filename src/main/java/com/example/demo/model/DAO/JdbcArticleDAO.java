@@ -1,13 +1,14 @@
 package com.example.demo.model.DAO;
 
 import com.example.demo.model.entity.Article;
-import com.example.demo.model.dto.ArticleUpdateDto;
+import com.example.demo.model.dto.ArticleUpdateRequest;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 import org.springframework.stereotype.Component;
 
+import java.sql.Timestamp;
 import java.util.*;
 
 @Component
@@ -46,13 +47,13 @@ public class JdbcArticleDAO implements ArticleDAO {
     }
 
     @Override
-    public void update(int id, ArticleUpdateDto updateParam) {
+    public void update(int id, ArticleUpdateRequest updateParam) {
         String sql = "update article set board_id=?, title=?, content=?, modified_date=? where id = ?";
         jdbcTemplate.update(sql,
                 updateParam.boardId(),
                 updateParam.title(),
                 updateParam.content(),
-                new Date(),
+                new Timestamp(System.currentTimeMillis()),
                 id);
     }
 

@@ -2,7 +2,7 @@ package com.example.demo.Controller;
 
 import com.example.demo.model.dto.ArticleCreateRequest;
 import com.example.demo.model.dto.ArticleGetResponse;
-import com.example.demo.model.dto.ArticleUpdateDto;
+import com.example.demo.model.dto.ArticleUpdateRequest;
 import com.example.demo.model.service.ArticleService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -43,7 +43,7 @@ public class ArticlesController {
 
     // 특정 article 정보 수정
     @PutMapping("/{id}")
-    public ResponseEntity<?> updateArticle(@PathVariable("id") int id, @RequestBody ArticleUpdateDto updatedArticle) {
+    public ResponseEntity<?> updateArticle(@PathVariable("id") int id, @RequestBody ArticleUpdateRequest updatedArticle) {
         try {
             articleService.update(id, updatedArticle);
             return ResponseEntity.ok(articleService.getById(id));
