@@ -11,7 +11,6 @@ build/
 .factorypath
 .project
 .settings
-.yml
 .springBeans
 .sts4-cache
 bin/
@@ -22,6 +21,7 @@ bin/
 .idea
 *.iws
 *.iml
+*.yml
 *.ipr
 out/
 !**/src/main/**/out/
