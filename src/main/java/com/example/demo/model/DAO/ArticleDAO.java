@@ -1,7 +1,7 @@
 package com.example.demo.model.DAO;
 
 import com.example.demo.model.entity.Article;
-import com.example.demo.model.DAO.dto.ArticleUpdateDto;
+import com.example.demo.model.dto.ArticleUpdateDto;
 
 import java.util.List;
 import java.util.Optional;

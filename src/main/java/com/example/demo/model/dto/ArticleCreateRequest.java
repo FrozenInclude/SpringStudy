@@ -1,4 +1,4 @@
-package com.example.demo.model.DAO.dto;
+package com.example.demo.model.dto;
 
 public record ArticleCreateRequest(
         int author_id,

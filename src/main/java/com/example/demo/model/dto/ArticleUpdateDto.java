@@ -1,4 +1,4 @@
-package com.example.demo.model.DAO.dto;
+package com.example.demo.model.dto;
 
 import java.util.Date;
 

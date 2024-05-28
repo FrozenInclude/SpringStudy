@@ -1,7 +1,7 @@
 package com.example.demo.model.DAO;
 
 import com.example.demo.model.entity.Article;
-import com.example.demo.model.DAO.dto.ArticleUpdateDto;
+import com.example.demo.model.dto.ArticleUpdateDto;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;

@@ -1,4 +1,4 @@
-package com.example.demo.model.DAO.dto;
+package com.example.demo.model.dto;
 
 import com.example.demo.model.entity.Article;
 import com.example.demo.model.entity.Board;

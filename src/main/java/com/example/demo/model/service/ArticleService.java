@@ -6,9 +6,9 @@ import com.example.demo.model.entity.Member;
 import com.example.demo.model.DAO.ArticleDAO;
 import com.example.demo.model.DAO.BoardDAO;
 import com.example.demo.model.DAO.MemberDAO;
-import com.example.demo.model.DAO.dto.ArticleCreateRequest;
-import com.example.demo.model.DAO.dto.ArticleGetResponse;
-import com.example.demo.model.DAO.dto.ArticleUpdateDto;
+import com.example.demo.model.dto.ArticleCreateRequest;
+import com.example.demo.model.dto.ArticleGetResponse;
+import com.example.demo.model.dto.ArticleUpdateDto;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

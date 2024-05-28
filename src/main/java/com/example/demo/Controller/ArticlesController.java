@@ -1,8 +1,8 @@
 package com.example.demo.Controller;
 
-import com.example.demo.model.DAO.dto.ArticleCreateRequest;
-import com.example.demo.model.DAO.dto.ArticleGetResponse;
-import com.example.demo.model.DAO.dto.ArticleUpdateDto;
+import com.example.demo.model.dto.ArticleCreateRequest;
+import com.example.demo.model.dto.ArticleGetResponse;
+import com.example.demo.model.dto.ArticleUpdateDto;
 import com.example.demo.model.service.ArticleService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

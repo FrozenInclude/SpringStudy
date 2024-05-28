@@ -1,6 +1,6 @@
 package com.example.demo.Controller;
 
-import com.example.demo.model.DAO.dto.ArticleGetResponse;
+import com.example.demo.model.dto.ArticleGetResponse;
 import com.example.demo.model.service.ArticleService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
