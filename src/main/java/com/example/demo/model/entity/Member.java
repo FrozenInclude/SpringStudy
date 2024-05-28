@@ -1,13 +1,11 @@
-package com.example.demo.model;
-
-import java.util.Date;
+package com.example.demo.model.entity;
 
 
 public class Member {
     private int id;
     private String name;
     private String email;
-    private String phoneNumber;
+    private String password;
 
     public int getId() {
         return this.id;
@@ -33,11 +31,11 @@ public class Member {
         this.email = email;
     }
 
-    public String getPhoneNumber() {
-        return this.phoneNumber;
+    public String getPassword() {
+        return this.password;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    public void setPassword(String password) {
+        this.password = password;
     }
 }
