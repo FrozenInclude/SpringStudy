@@ -32,6 +32,7 @@ public class ArticleService {
         this.boardDAO = boardDAO;
     }
 
+    @Transactional(readOnly = true)
     public List<ArticleGetResponse> getAll() {
         List<Article> articles = articleDAO.findAll();
         return articles.stream()
@@ -46,6 +47,7 @@ public class ArticleService {
                 .toList();
     }
 
+    @Transactional(readOnly = true)
     public List<ArticleGetResponse> getAllByBoardId(int board_id) {
         List<Article> articles = articleDAO.findAll();
         return articles.stream().filter(article -> article.getBoard_id() == board_id)
@@ -60,12 +62,14 @@ public class ArticleService {
                 .toList();
     }
 
+    @Transactional(readOnly = true)
     public String getBoardNameByBoardID(int boardID) {
         Board board = boardDAO.findById(boardID)
                 .orElseThrow(IllegalArgumentException::new);
         return board.getName();
     }
 
+    @Transactional(readOnly = true)
     public ArticleGetResponse getById(int id) {
         Article article = articleDAO.findById(id)
                 .orElseThrow(IllegalArgumentException::new);
